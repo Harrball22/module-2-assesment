@@ -23,9 +23,9 @@
 
 //CODE HERE
 
+const greetUser = (username) => "Welcome back, " + username
 
-
-
+// console.log(greetUser("Harrball22"))
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -51,7 +51,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+function canWeDeliver(zipCode){
+    if (deliveryAreaZipCodes.includes(zipCode)){
+        return "You're in our delivery zone!"
+    } else {
+        return "Sorry, we can't deliver to that address"
+    }
+}
 
+// console.log(canWeDeliver(84058))
+// console.log(canWeDeliver(85204))
 
 /* 
     Problem 2 Continued
@@ -72,6 +81,24 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 // CODE HERE
 
+function canWeDeliverTwo(zipCode){
+    let canDeliver = false
+
+    deliveryAreaZipCodes.forEach((element) => {
+        if (element === zipCode){
+            canDeliver = true
+        }
+    })
+
+    if (canDeliver) {
+        return "You're in our delivery zone!"
+    } else {
+        return "Sorry, we can't deliver to that address"
+    }
+}
+
+// console.log(canWeDeliverTwo(84058))
+// console.log(canWeDeliverTwo(85204))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -108,7 +135,9 @@ const deals = [
 
 //CODE HERE
 
+deals[0].title = deals[0].title.replace("15%", "10%")
 
+// console.log(deals)
 
 /*
     The restaurant is going to continue its
@@ -124,3 +153,8 @@ const deals = [
 */
 
 //CODE HERE
+
+deals[1].desc = deals[1].desc.replace("March", "April").trim()
+
+
+console.log(deals)

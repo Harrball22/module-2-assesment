@@ -35,8 +35,12 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((acc, curr) => {
+    return acc + curr.price
+}, 0)
 
+
+// console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +59,11 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax){
+    return (cartTotal * (1 + tax) - couponValue)
+}
 
+// console.log(calcFinalPrice(50, 10, 0.07))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +87,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    firstName. To identify customer. Datatype of string because names are words
+    lastName. To identify customer. Datatype of string because names are words
+    phoneNumber. To identfy customers if two have the same name as another customer. Datatype of number because it is a number
+    email. To send recipts and offers. Datatype of string because it has characters
 
 */
 
@@ -88,3 +100,10 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    firstName: "John",
+    lastName: "Doe",
+    phoneNumber: 1234567890,
+    email: "jhondoe@gmail.com"
+}
